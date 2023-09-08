@@ -9,7 +9,6 @@ default
     {
         // Activate the timer listener every 3 seconds
         llSetTimerEvent(gap);
-        llSensor("", NULL_KEY, ACTIVE | PASSIVE | SCRIPTED, 10.0, PI);
     }
     
         sensor( integer detected )
@@ -22,6 +21,7 @@ default
 
     timer()
     {
+       llSensor("", NULL_KEY, ACTIVE | PASSIVE | SCRIPTED, 10.0, PI);
         counter = counter + gap; 
             list details = llGetObjectDetails(id, ([OBJECT_NAME, OBJECT_DESC,
                             OBJECT_POS, OBJECT_ROT, OBJECT_VELOCITY,
